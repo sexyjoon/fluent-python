@@ -1,0 +1,16 @@
+from functools import lru_cache
+
+
+from clock_decorator2 import clock
+
+
+@lru_cache()
+@clock
+def fibonacci(n):
+    if n < 2:
+        return n
+    return fibonacci(n-2) + fibonacci(n-1)
+
+
+if __name__ == '__main__':
+    fibonacci(6)
